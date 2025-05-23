@@ -153,7 +153,6 @@ const SignupPage = () => {
                      disabled:opacity-60 disabled:cursor-not-allowed 
                      transition-all duration-200 ease-in-out"
         >
-          {}
           {authLoading ? "Creating account..." : "Sign Up"}
         </button>
       </form>

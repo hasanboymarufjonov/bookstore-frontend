@@ -24,7 +24,6 @@ const CartItem = ({ item }) => {
         </div>
       </Link>
 
-      {}
       <div className="flex-grow text-center sm:text-left">
         <Link to={`/books/${item.id}`} className="focus:outline-none group">
           <h2 className="text-lg sm:text-xl font-semibold text-slate-800 group-hover:text-indigo-600 transition-colors duration-150 ease-in-out leading-tight">

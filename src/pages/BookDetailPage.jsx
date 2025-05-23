@@ -165,7 +165,6 @@ const BookDetailPage = () => {
             className="inline-flex items-center text-indigo-700 hover:text-indigo-900 transition-colors duration-150 group text-sm font-medium"
           >
             <HiOutlineArrowLeft className="h-4 w-4 mr-2 transition-transform duration-200 ease-in-out group-hover:-translate-x-1" />{" "}
-            {}
             Back to Shopping
           </RouterLink>
         </div>

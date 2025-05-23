@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import { apiService } from "../services/apiService";
 import {
@@ -12,6 +12,7 @@ import {
   HiOutlineLockClosed,
   HiOutlineDocumentText,
   HiOutlineTableCells,
+  HiOutlineArchiveBox,
 } from "react-icons/hi2";
 
 const Loader = ({ message = "Loading data..." }) => (
@@ -199,6 +200,29 @@ const AdminDashboardPage = () => {
           </div>
         </div>
       )}
+      <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 border-t border-slate-200 pt-8">
+        <Link
+          to="/admin/users"
+          className="flex flex-col items-center justify-center p-6 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 ease-in-out cursor-pointer text-center bg-sky-100 text-sky-800 hover:bg-sky-200 focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
+        >
+          <HiOutlineUsers className="h-12 w-12 mb-3 text-sky-600" />
+          <span className="font-semibold text-lg">Manage Users</span>
+        </Link>
+        <Link
+          to="/admin/books"
+          className="flex flex-col items-center justify-center p-6 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 ease-in-out cursor-pointer text-center bg-emerald-100 text-emerald-800 hover:bg-emerald-200 focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2"
+        >
+          <HiOutlineBookOpen className="h-12 w-12 mb-3 text-emerald-600" />
+          <span className="font-semibold text-lg">Manage Books</span>
+        </Link>
+        <Link
+          to="/admin/orders"
+          className="flex flex-col items-center justify-center p-6 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 ease-in-out cursor-pointer text-center bg-amber-100 text-amber-800 hover:bg-amber-200 focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2"
+        >
+          <HiOutlineArchiveBox className="h-12 w-12 mb-3 text-amber-600" />
+          <span className="font-semibold text-lg">View All Orders</span>
+        </Link>
+      </div>
     </div>
   );
 };

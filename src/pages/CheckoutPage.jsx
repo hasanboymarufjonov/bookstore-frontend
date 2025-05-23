@@ -271,7 +271,7 @@ const CheckoutPage = () => {
                 />
               </div>
             </div>
-            {}
+
             <button
               type="submit"
               disabled={isProcessing || cartItems.length === 0}

@@ -74,6 +74,13 @@ export const apiService = {
     return fetcher(`/books${query ? `?${query}` : ""}`, { isPublic: true });
   },
   getBookById: (id) => fetcher(`/books/${id}`, { isPublic: true }),
+  createBook: (bookData) =>
+    fetcher("/books", { method: "POST", body: bookData }),
+
+  updateBook: (id, bookData) =>
+    fetcher(`/books/${id}`, { method: "PATCH", body: bookData }),
+
+  deleteBook: (id) => fetcher(`/books/${id}`, { method: "DELETE" }),
   createOrder: (orderData) =>
     fetcher("/orders", { method: "POST", body: JSON.stringify(orderData) }),
   getMyOrders: (params = {}) => {

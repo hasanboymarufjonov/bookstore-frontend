@@ -11,6 +11,9 @@ import CheckoutPage from "./pages/CheckoutPage";
 import AdminDashboardPage from "./pages/AdminDashboardPage";
 import UserOrdersPage from "./pages/UserOrdersPage";
 import UserOrderDetailPage from "./pages/UserOrderDetailPage";
+import AdminUsersPage from "./pages/AdminUsersPage";
+import AdminBooksPage from "./pages/AdminBooksPage";
+import AdminOrdersPage from "./pages/AdminOrdersPage";
 
 const ProtectedRoute = ({ children, adminOnly = false }) => {
   const { isAuthenticated, user, isLoading } = useAuth();
@@ -87,6 +90,30 @@ function App() {
           element={
             <ProtectedRoute adminOnly={true}>
               <AdminDashboardPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/users"
+          element={
+            <ProtectedRoute adminOnly={true}>
+              <AdminUsersPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/books"
+          element={
+            <ProtectedRoute adminOnly={true}>
+              <AdminBooksPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/orders"
+          element={
+            <ProtectedRoute adminOnly={true}>
+              <AdminOrdersPage />
             </ProtectedRoute>
           }
         />
